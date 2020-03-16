@@ -1,0 +1,83 @@
+﻿@model IEnumerable<FlightManager1.Models.Flight>
+
+@{
+    ViewData["Title"] = "Flights";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.From)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.To)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeaveTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfPlane)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaneId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PilotName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaneCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuisnessClassCapacity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.From)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.To)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArivalTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfPlane)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaneId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PilotName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaneCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuisnessClassCapacity)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

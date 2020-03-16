@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-FlightManager1-B792637B-1E7A-48E8-A18E-4B919BA187D5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20200304115852_test.cs" />
+    <Compile Remove="Data\Migrations\20200304115852_test.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200304124817_ickoEgospodimublagodarim.cs" />
+    <Compile Remove="Data\Migrations\20200304124817_ickoEgospodimublagodarim.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200305064426_Reservations.cs" />
+    <Compile Remove="Data\Migrations\20200305064426_Reservations.Designer.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Reference Include="PagedList">
+      <HintPath>..\..\..\..\.nuget\packages\pagedlist\1.17.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\..\..\..\.nuget\packages\pagedlist.mvc\4.5.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

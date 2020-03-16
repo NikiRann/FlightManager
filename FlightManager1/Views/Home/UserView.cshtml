@@ -1,0 +1,87 @@
+﻿@model IEnumerable<FlightManager1.Models.Flight>
+@{
+    ViewData["Title"] = "UserView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h1>Hello @this.User.Identity.Name!</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.From)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.To)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LeaveTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfPlane)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaneId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PilotName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaneCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuisnessClassCapacity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.From)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.To)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArivalTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LeaveTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeOfPlane)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlaneId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PilotName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlaneCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuisnessClassCapacity)
+                </td>
+                <td>
+                    @if (item.PlaneCapacity != 0)
+                    {
+                        <a asp-action="Reserve" asp-route-id="@item.Id">Reserve</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
